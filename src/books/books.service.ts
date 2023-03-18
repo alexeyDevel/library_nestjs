@@ -21,4 +21,7 @@ export class BooksService {
   async findAllBooks(): Promise<IBook[]> {
     return this.bookModel.find().exec();
   }
+  async findOneBooks(id): Promise<IBook> {
+    return this.bookModel.findById(id).exec();
+  }
 }
