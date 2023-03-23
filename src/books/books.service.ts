@@ -9,19 +9,16 @@ import { Connection, Model } from 'mongoose';
 
 @Injectable()
 export class BooksService {
-  constructor(
-    @InjectModel(Book.name) private bookModel: Model<BookDocument>,
-    @InjectConnection() private connection: Connection,
-  ) {}
-  private readonly books: IBook[] = booksMock;
-  async create(book: CreateBookDto): Promise<IBook> {
+  constructor(@InjectModel(Book.name) private bookModel: Model<BookDocument>) {}
+
+  async create(book: CreateBookDto): Promise<Book> {
     const createBook = new this.bookModel(book);
     return createBook.save();
   }
-  async findAllBooks(): Promise<IBook[]> {
+  async findAllBooks(): Promise<Book[]> {
     return this.bookModel.find().exec();
   }
-  async findOneBooks(id): Promise<IBook> {
+  async findOneBooks(id): Promise<Book> {
     return this.bookModel.findById(id).exec();
   }
 }
