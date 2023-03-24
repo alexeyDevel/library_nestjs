@@ -1,6 +1,7 @@
 import * as Joi from 'joi';
 
 export class CreateBookDto implements CreateBookDto {
+  _id?: string;
   title: string;
   description?: string;
   authors?: string[];
