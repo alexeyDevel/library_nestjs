@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <input type="number" id="bookId" placeholder="ID книги">
+    <input type="text" id="comment" placeholder="Комментарий">
+    <button type="button" class="btn btn-light" onclick="getAllCommentsByBooksId()">Все комментарии</button>
+    <button type="button" class="btn btn-dark" onclick="saveComment()">Сохранить комментарии</button>
+  </div>
+  <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+  <script src="ws.js"></script>
+</body>
+</html>

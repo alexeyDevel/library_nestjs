@@ -1,6 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { HydratedDocument, Types } from 'mongoose';
-import { IBook } from '../interfaces/IBook';
 
 export type BookDocument = HydratedDocument<Book>;
 

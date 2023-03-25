@@ -7,6 +7,7 @@ import { ConfigModule } from '@nestjs/config';
 import * as process from 'process';
 import { AuthModule } from 'src/auth/auth.module';
 import { UsersModule } from '../users/users.module';
+import { BookCommentModule } from '../book-comment/book-comment.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { UsersModule } from '../users/users.module';
     BooksModule,
     AuthModule,
     UsersModule,
+    BookCommentModule,
     MongooseModule.forRoot(process.env.MONGO_CONNECTION),
   ],
   controllers: [AppController],
